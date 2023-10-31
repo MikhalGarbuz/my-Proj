@@ -1,0 +1,24 @@
+h1  {
+    color: red;
+}
+
+p {
+    color: aliceblue;
+}
+
+.wider-column {
+    /* Make the column wider */
+    width: 100%;
+  }
+  
+  .taller-column {
+    /* Make the column taller */
+    min-height: 50px;
+    background-color: lightblue; /* Just for visualization */
+  }
+  a {
+  text-decoration: none; /* Remove underline */
+  color:aliceblue; /* Change text color */
+  font-weight: bold; /* Make the text bold */
+}
+

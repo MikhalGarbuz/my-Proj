@@ -23,8 +23,8 @@ gulp.task("css", function () {
 });
 
 gulp.task("sass", function () {
-    return gulp.src("app/sass/*.sass")
-        .pipe(concat('styles.sass')) // combine multiple files into one
+    return gulp.src("app/sass/*.scss")
+        .pipe(concat('styles.scss')) // combine multiple files into one
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
@@ -59,7 +59,7 @@ gulp.task("watch", function () {
     });
     gulp.watch("app/*.html", gulp.series("html"));
     gulp.watch("app/js/*.js", gulp.series("scripts"));
-    gulp.watch("app/sass/*.sass", gulp.series("sass"));
+    gulp.watch("app/sass/*.scss", gulp.series("sass"));
     gulp.watch("app/img/*.{jpg,jpeg,png,gif}", gulp.series("images"))
     gulp.watch("dist").on('change', browserSync.reload);
 });
