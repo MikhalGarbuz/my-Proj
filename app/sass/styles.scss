@@ -1,24 +1,11 @@
-h1  {
-    color: red;
+h1 {
+  color: #ff0000 !important;
 }
 
-p {
-    color: aliceblue;
+.button {
+  background: #000;
+  padding: 3px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+  border: 1px solid #ff0000;
 }
-
-.wider-column {
-    /* Make the column wider */
-    width: 100%;
-  }
-  
-  .taller-column {
-    /* Make the column taller */
-    min-height: 50px;
-    background-color: lightblue; /* Just for visualization */
-  }
-  a {
-  text-decoration: none; /* Remove underline */
-  color:aliceblue; /* Change text color */
-  font-weight: bold; /* Make the text bold */
-}
-
