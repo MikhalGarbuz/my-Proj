@@ -10,37 +10,89 @@ body{
   padding: 0;
 }
 
-.container-fluid {
-
-}
 .sidebar-container {
   padding: 0;
 }
+
 .navbar{
   height: 60px;
   background-color: #2c2c2c;
+}
+
+.navbar-collapse{
+  margin-left: 700px;
+
+.rounded-left{
+  border-radius: 15px 0 0 15px;
+}
+
+.rounded-rigth{
+  border-radius: 0 15px 15px 0;
+}
+
+.nav-item{
+  background-color: #363636;
+  height: 30px;
+  width: 125px;
+  margin-right: 2px;
+  a{
+    text-align: center;
+
+    color:#eee;
+  }
+}
+}
+
+.has-search .form-control {
+  background-color: #363636;
+  margin-left: 100px;
+  width: 75px;
+  height: 30px;
+  .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+ }
+}
+
+.has-search .form-control-feedback {
+  margin-left: 95px;
+
+  position: absolute;
+  z-index: 2;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
 }
 
 .logo-img{
   margin-left: 30px;
 }
 
-#side_nav{
-  background: #000;
-  min-width: 250px;
-  max-width: 250px;
 
-}
 .row {
   .sidebar {
     height: 100vh;
     width: 200px;
+    background-color:#373737;
+    
     justify-content: center;
     .list-unstyled {
       li {
+          
         
         div {
+          
           a {
+            .text-decoration-none{
+              height: 100px;
+              width: 205px;
+            }
+            color: #eee;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -65,7 +117,7 @@ hr.h-color{
 }
 
 .sidebar li.active{
-  background:dimgray;
+  background-color: #3d3d3d;
   border-radius: 8px;
 }
 
@@ -81,6 +133,8 @@ hr.h-color{
   color:#000;
 }
 
-.col-md-2{
-  background: darkgray;
+
+.col-md-5{
+  background-color: #f2f2f2;
 }
+
