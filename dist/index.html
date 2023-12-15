@@ -55,7 +55,7 @@
 
 
   
-<div class="container-fluid d-flex">
+<div class="container-fluid d-flex " style = "height: calc(100vh - 60px);">
   <div class = "sidebar d-flex">
         <nav class="d-none d-md-block ">
             <div>
@@ -95,27 +95,53 @@
         fhgdzszfgg  
       </div>
     </div>
+
     <div class="row">
       <div class="col">
-      <div class="graphic1">
-        <canvas id="line-chart" width="240" height="50"></canvas>
+        <div class="graphic1">
+
+        </div>
+
+        <div class="graphic1">
+          <row>
+            <div style="height: 70px;">
+              <h5> Expense categories <button onclick="updatechart()" style="margin-left: 140px;">Week</button><button>Month</button><button>Year</button><button >Other</button></h5>   
+            </div>
+          </row>
+          <canvas id="myDoughnutChart" width="240" height="50"></canvas>
+        </div>
 
       </div>
-      <div class="graphic1">
-        <canvas id="myDoughnutChart" width="240" height="50"></canvas>
-        
+      <div class="col">
+        <div class="graphic2">
+          <row>
+            <div class="transactions">
+              <h2>Transactions history</h2>
+              <p style="margin-left: 90px;">Any currency v </p><p style="margin-left: 20px;">  All categories </p>
+            </div>
+          </row>
+          <h5>December 31</h5>
+          <img src=".\img\Group 15 copy 2.png">
+          <img src=".\img\Group 16 copy.png">
+          <img src=".\img\Group 16.png">
+
+
+      <!-- <row>
+        <div class="transactions">
+          <div><h5>"Food & Drinks" restaurant</h5><p>Cafe and restaurants Card **3478</p></div><h4>- 480</h4><h6>UAH</h6>
+        </div>
+        <div class="transactions">
+          <div><h5>"Walmart" store (Main Str. 13)</h5><p>Groceries & food Card **7813</p></div><h4>- 480</h4><h6>UAH</h6>
+        </div>
+        <div class="transactions">
+          <div><div class="transactions"><h5>Transfer from &nbsp;<h5 style="text-decoration: underline; color:aqua">Alexey</h5></div><p>Transactions To card **3478</p></div><h4>- 480</h4><h6>UAH</h6>
+        </div>
+      </row> -->
+        </div>
       </div>
-    </div>
-      <div class="graphic2">
-        <h2>Transactions history<h2>
-      </div>
-      
-    </div>
-    
-  
   </div>
-  <div class="sidebar-menu">
-    
+
+  
   </div>
 </div>
   
@@ -132,6 +158,12 @@ integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cD
       jQuery(this).addClass('active');
     })    
     </script>
+    <script>
+      jQuery(".sidebar-menu graphic1 h5 button").on('click' , function(){
+        jQuery(".sidebar-menu graphic1 h5 button.active").removeClass('active');
+        jQuery(this).addClass('active');
+      })    
+      </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/scripts.min.js"></script>
 </body>
