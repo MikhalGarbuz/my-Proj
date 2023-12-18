@@ -1,172 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link href="css/styles.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="/styles/css/style.min.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <title>Bootstrap Sidebar</title>
-    
-</head>
-
-<body>  
-
-<div class="container-fluid ">
-  <nav class="navbar navbar-expand-lg" style="flex-wrap: wrap;">
-    <div>
-        <a class="navbar-brand h1" href="#" style="margin-right: 0px;">
-            <div class = "logo-img">
-                <img src="img/monobank  _.png">
-                <img src = "img/Web.png">
-            </div>
-        </a>
-    </div>
-
-      <div class = "ValueCourse">
-          <p>USD  27,23    /    EUR 32,60      /      BTC 250 648    </p>
-      </div>
-    <div class="collapse navbar-collapse buttons">
-        <button class = "btn1">MONEY TRANSFER</button>
-        <button class = "btn2">CHARGE PHONE</button>
-        <button class = "btn3">REPLENISH CARD</button>
-    </div>
-      <div class=" searchandlogo">
-          <p>Hello, Nick!</p>
-          <div class="form-group has-search rounded-left rounded-rigth d-flex">
-              <input type="text" class="form-control">
-              <span  class="SearchIMG" aria-hidden="true"></span>
-              <span  class="AvatarIMG"></span>
-          </div>
-      </div>
-
-
-    <div class="input-group">
-
-    </div>
-
-  </nav>
-</div>  
-
-
-  
-<div class="container-fluid d-flex " style = "height: calc(100vh - 60px);">
-  <div class = "sidebar d-flex">
-        <nav class="d-none d-md-block ">
-            <div>
-                <ul class="list-unstyled">
-                    <li><div><a href="#" class="text-decoration-none center-vertically"><img src="./img/home.png">Dashboard</a></div></li>
-                    <li><div><a href="#" class="text-decoration-none"><img src="./img/pie-chart.png">Transactions</a></div></li>
-                    <li><div><a href="#" class="text-decoration-none "><img src="./img/id-card.png">Acounts/cards</a></div></li>
-                    <li><div><a href="#" class="text-decoration-none "><img src="./img/copy.png">Leans/deascounts</a></div></li>
-                    <li><div><a href="#" class="text-decoration-none "><img src="./img/piggy-bank.png">Cashback</a></div></li>
-                    <li><div><a href="#" class="text-decoration-none "><img src="./img/money.png"><span>Bank services</span></a></div></li>
-                </ul>
-            </div>
-            
-            <div class = "services">
-                <ul class="list-unstyled px-2 ">
-                    <li><div><a href="#" class="text-decoration-none "><img src="./img/customer-service%20copy.png"></img>Support</a></div></li>
-
-                </ul>
-            </div>
-
-        </nav>
-          
-  </div>
-      
-  <div class = "sidebar-menu" >
-    <div class="row">
-      <div class="mycard">
-        <h6>fhgdzszfgg</h6>  
-      </div>
-      <div class="mycard">
-        fhgdzszfgg  
-      </div>
-      <div class="mycard">
-        fhgdzszfgg  
-      </div>
-      <div class="mycard">
-        fhgdzszfgg  
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <div class="graphic1">
-
-        </div>
-
-        <div class="graphic1">
-          <row>
-            <div style="height: 70px;">
-              <h5> Expense categories <button onclick="updatechart()" style="margin-left: 140px;">Week</button><button>Month</button><button>Year</button><button >Other</button></h5>   
-            </div>
-          </row>
-          <canvas id="myDoughnutChart" width="240" height="50"></canvas>
-        </div>
-
-      </div>
-      <div class="col">
-        <div class="graphic2">
-          <row>
-            <div class="transactions">
-              <h2>Transactions history</h2>
-              <p style="margin-left: 90px;">Any currency v </p><p style="margin-left: 20px;">  All categories </p>
-            </div>
-          </row>
-          <h5>December 31</h5>
-          <img src=".\img\Group 15 copy 2.png">
-          <img src=".\img\Group 16 copy.png">
-          <img src=".\img\Group 16.png">
-
-
-      <!-- <row>
-        <div class="transactions">
-          <div><h5>"Food & Drinks" restaurant</h5><p>Cafe and restaurants Card **3478</p></div><h4>- 480</h4><h6>UAH</h6>
-        </div>
-        <div class="transactions">
-          <div><h5>"Walmart" store (Main Str. 13)</h5><p>Groceries & food Card **7813</p></div><h4>- 480</h4><h6>UAH</h6>
-        </div>
-        <div class="transactions">
-          <div><div class="transactions"><h5>Transfer from &nbsp;<h5 style="text-decoration: underline; color:aqua">Alexey</h5></div><p>Transactions To card **3478</p></div><h4>- 480</h4><h6>UAH</h6>
-        </div>
-      </row> -->
-        </div>
-      </div>
-  </div>
-
-  
-  </div>
-</div>
-  
-
-  
-
-<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-  </script>
-  <script>
-    jQuery(".sidebar ul li").on('click' , function(){
-      jQuery(".sidebar ul li.active").removeClass('active');
-      jQuery(this).addClass('active');
-    })    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity=
+                    "sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous">
     </script>
-    <script>
-      jQuery(".sidebar-menu graphic1 h5 button").on('click' , function(){
-        jQuery(".sidebar-menu graphic1 h5 button.active").removeClass('active');
-        jQuery(this).addClass('active');
-      })    
-      </script>
+    <title></title>
+</head>
+<body>
+    
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+        <div id="navleft">
+            <div class="monoweb">
+                <a id="mono" class="navbar-brand" href="#">Monobank</a>
+                <a id="web" class="navbar-brand" href="#">| Web</a>
+            </div>
+            <div id="ssnav">
+                <div class="column">
+                <p> USD 27,23</p>
+                </div>
+                    <p> / </p>
+                <div class="column">
+                <p>EUR 32,60</p> 
+                </div>
+                    <p> / </p>
+                <div class="column">
+                <p> BTC 250 648</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="rsnav">
+                <div id="mainmenu">
+                    <a class="nav-item nav-link active" href="#">MONEY TRANSFER <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">CHARGE PHONE</a>
+                    <a class="nav-item nav-link" href="#">REPLENISH CARD</a>
+                </div>
+                <div id="searchhello">
+                    <div class="hello" style="display: flex; align-items:center">
+                        <div>Hello, Nik!</div>
+                    </div>
+                    <div class="search" >
+                        <a href="#"><img src="./img/lupa.png" style="height: 17px; width: 17px;margin:8px;"></a>
+                        <img src="./img/man2.png" style="height: 35px; width: 35px; border-radius:20px;" >
+                    </div>
+                </div>
+        </div>
+    </nav>
+        <div id="mainpage">
+            <div id="side">
+                <div id="sidebar">
+                    <div class="first">
+                        <div class="sidemenu">
+                            <img src="./img/home.png" style="height: 30px; width: 30px;">
+                            <p>Dashboard</p>
+                        </div>
+                        <div class="sidemenu">
+                            <img src="./img/pie-chart.png" style="height: 30px; width: 30px;">
+                        <p>Transaction</p>
+                        </div>
+                        <div class="sidemenu">
+                            <img src="./img/id-card.png" style="height: 30px; width: 30px;">
+                            <p>Accounts / Cards</p>
+                        </div>
+                        <div class="sidemenu">
+                            <img src="./img/copy.png" style="height: 30px; width: 30px;">
+                            <p>Loans / Deposits</p>
+                        </div>
+                        <div class="sidemenu">
+                            <img src="./img/piggy-bank.png" style="height: 30px; width: 30px;">
+                            <p>Cashback</p>
+                        </div>
+                        <div class="sidemenu">
+                            <img src="./img/money.png" style="height: 30px; width: 30px;">
+                            <p>Bank services</p>
+                        </div>                   
+                        
+                        </div>
+                    <div class="bottom">
+                        <div class="sidemenu">
+                            <img src="./img/support.png" style="height: 30px; width: 30px;">
+                            <p>Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="centermenu" class="container-fluid">
+                <div id="divcards" class="row md-8 sm-4">
+                    <div id="cards" class="row md-2 sm-1">
+                        <div class="firstsectioncards">
+                            <div class="moneysection">
+                            <p>150 000</p>
+                            <h2>UAH</h2>
+                            </div>
+                            <img src="./img/edit.png" style="height: 18px; width: 18px;">
+                        </div>
+                        <div class="secondsectioncards">
+                            <p>2132 8732 2347 3478</p>
+                        </div>
+                        <div class="thirdsectioncards">
+                            <p>07/20</p>
+                            <img src="./img/mastercard.png" style="height: 31px; width: 43px;">
+                        </div>
+                    </div>
+
+                    <div id="cards" class="row md-2 sm-1">
+                        <div class="firstsectioncards">
+                            <div class="moneysection">
+                            <p>12 180</p>
+                            <h2>USD</h2>
+                            </div>
+                            <img src="./img/edit.png" style="height: 18px; width: 18px;">
+                        </div>
+                        <div class="secondsectioncards">
+                            <p>8346 5248 6232 7813</p>
+                        </div>
+                        <div class="thirdsectioncards">
+                            <p>10/24</p>
+                            <img src="./img/visa.png" style="height: 31px; width: 46px;">
+                        </div>
+                    </div>
+
+
+                    <div id="cards" class="row md-2 sm-1">
+                        <div class="firstsectioncards">
+                            <div class="moneysection">
+                            <p>8 305</p>
+                            <h2>EUR</h2>
+                            </div>
+                            <img src="./img/edit.png" style="height: 18px; width: 18px;">
+                        </div>
+                        <div class="secondsectioncards">
+                            <p>2132 8732 2347 3478</p>
+                        </div>
+                        <div class="thirdsectioncards">
+                            <p>14/28</p>
+                            <img src="./img/payoneer.png" style="height: 31px; width: 76px;">
+                        </div>
+                    </div>
+
+
+              
+
+
+                    <div id="cards" class="row md-2 sm-1">
+                        <div class="firstsectioncards">
+                            <div class="moneysection">
+                            <p>2.023171</p>
+                            <h2>BTC</h2>
+                            </div>
+                            <img src="./img/edit.png" style="height: 18px; width: 18px;">
+                        </div>
+                        <div class="secondsectioncards">
+                            <p>6334 9823 9234 0347</p>
+                        </div>
+                        <div class="thirdsectioncards">
+                            <p>08/26</p>
+                            <img src="./img/bitcoin.png" style="height: 25px; width: 71px;">
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+                <div id="maininfo" class="container-fluid">
+                        <div class="col-md-6">
+                            <div id="statistic" class="row">
+                                <div id="stattop" class="col md-6 sm-4">
+                                    <div class="left_top">
+                                        <div style="font-size:16px; font-weight:bold; width:200px">Balance summary</div>
+                                        <div class="date_settings">
+                                            <div style="font-size:16px; color:grey;"><a> Week </a></div>
+                                            <div style="font-size:16px; color:grey;"><a> Month </a></div>
+                                            <div style="font-size:16px; color:grey;"><a> Year </a></div>
+                                            <div style="font-size:16px; color:grey;"><a> Other </a></div>
+                                        </div>
+                                    </div>
+                                    <div  style="height: 300px; width:775px;">
+                                    <canvas id="myChart" width="775" height="300" ></canvas>
+                                    </div>
+                                    <div class="balance">
+                                        <div style="display: flex; width:300px; justify-content:space-evenly">
+                                            <div style="margin-right: 1%;">
+                                                <p style="font-size: 20px; font-weight:500">Total balance :</p>
+                                            </div>
+                                            <div style="display: flex;">
+                                                <p style="font-size: 20px; font-weight:500;">29 480</p>
+                                                <p style="font-size: 20px; font-weight:500; margin-left:5px"> USD </p>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+
+
+
+
+                                
+                                <div id="statbott" class="col md-6 sm-4">
+                                    <div class="left_top">
+                                        <div style="font-size:16px; font-weight:bold; width:200px">Expense categories</div>
+                                        <div class="date_settings">
+                                            <div style="font-size:16px; color:grey;"><a> Week </a></div>
+                                            <div style="font-size:16px; color:grey;"><a> Month </a></div>
+                                            <div style="font-size:16px; color:grey;"><a> Year </a></div>
+                                            <div style="font-size:16px; color:grey;"><a> Other </a></div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="categories">
+                                        
+                                        <div class="category">
+                                            <img src="./img/pudra.png" style="height: 20px; width: 20px;">
+                                            <p style="font-weight:bold;font-size:16px;width:35px;">25%</p>
+                                            <p style="color: grey; font-size:14px; width:140px;">Vechicle and transport</p>
+                                        </div>
+                                        <div class="category">
+                                            <img src="./img/pink.png" style="height: 20px; width: 20px;">
+                                            <p style="font-weight:bold;font-size:16px;width:35px;">23%</p>
+                                            <p style="color: grey; font-size:14px; width:140px;">Groceries and food</p>
+                                        </div>
+                                        <div class="category">
+                                            <img src="./img/black.png" style="height: 20px; width: 20px;">
+                                            <p style="font-weight:bold;font-size:16px;width:35px;">18%</p>
+                                            <p style="color: grey; font-size:14px; width:140px;">Clothes and shoes</p>
+                                        </div>
+                                        <div class="category">
+                                            <img src="./img/purple.png" style="height: 20px; width: 20px;">
+                                            <p style="font-weight:bold;font-size:16px;width:35px;">16%</p>
+                                            <p style="color: grey; font-size:14px; width:140px;">Cafe and restaurants</p>
+                                        </div>
+                                        <div class="category">
+                                            <img src="./img/blue.png" style="height: 20px; width: 20px;">
+                                            <p style="font-weight:bold;font-size:16px;width:35px;">15%</p>
+                                            <p style="color: grey; font-size:14px; width:140px;">Mobile and internet</p>
+                                        </div>
+                                        <div class="category">
+                                            <img src="./img/yellow.png" style="height: 20px; width: 20px;">
+                                            <p style="font-weight:bold;font-size:16px;width:35px;">10%</p>
+                                            <p style="color: grey; font-size:14px; width:140px;">House and services</p>
+                                        </div>
+                                        <div class="category">
+                                            <img src="./img/green.png" style="height: 20px; width: 20px;">
+                                            <p style="font-weight:bold;font-size:16px; width:35px;">9%</p>
+                                            <p style="color: grey; font-size:14px; width:140px;">Other expenses</p>
+                                        </div>
+                                    </div>
+                                    <div style="width: 250px; ">
+                                        <canvas id="graph"></canvas>
+                                        <h1 style="position:absolute;font-weight: bold;color:black;margin-left:60px;z-index:2; top:240px;font-size:24px">- 6 567 USD</h1>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div id="transactions" class="col md-6 sm-4">
+                            <div class="toptransactions">
+                                <div style=" width: 200px;font-size:16px; font-weight:bold;">Transaction history</div>
+                                <div class="transactions_settings">
+                                    <div style="font-size:14px; color:grey;"> Any currency </div>
+                                    <div style="font-size:14px; color:grey;"> All categories </div>
+                                </div>
+                            </div>
+                            <div class="date">
+                                <p>December 31</p>
+                                <div class="date_transactions">
+                                    <div class="tran">
+                                        <div class="tran_info">
+                                            <div class="tran_left">
+                                                <img src="./img/man.png" style="height:40px;width:40px; border-radius:25px; margin-right:0.5%">
+                                                <div class="transer">
+                                                    <div style="font-size:14px; font-weight:500; color:black; margin-bottom:0px"> Transfer from <a href="#">Alexey</a></a></div>
+                                                    <div style="font-size:12px;color:grey;"> Transactions To card: ** 3478</div>
+                                                </div>
+                                            </div>
+                                            <div class="money_tran">
+                                                <div class="tran_numbers"> - 480</div>
+                                                <div class="tran_currency"> UAH</div>
+                                            </div>
+                                        </div>
+                                        <div class="tran_info">
+                                            <div class="tran_left">
+                                                <img src="./img/man.png" style="height:40px;width:40px; border-radius:25px; margin-right:0.5%">
+                                                <div class="transer">
+                                                    <div style="font-size:14px; font-weight:500; color:black; margin-bottom:0px"> Transfer from <a href="#">Alexey</a></a></div>
+                                                    <div style="font-size:12px;color:grey;"> Transactions To card: ** 3478</div>
+                                                </div>
+                                            </div>
+                                            <div class="money_tran">
+                                                <div class="tran_numbers"> - 480</div>
+                                                <div class="tran_currency"> UAH</div>
+                                            </div>
+                                        </div>
+                                        <div class="tran_info">
+                                            <div class="tran_left">
+                                                <img src="./img/man.png" style="height:40px;width:40px; border-radius:25px; margin-right:0.5%">
+                                                <div class="transer">
+                                                    <div style="font-size:14px; font-weight:500; color:black; margin-bottom:0px"> Transfer from <a href="#">Alexey</a></a></div>
+                                                    <div style="font-size:12px;color:grey;"> Transactions To card: ** 3478</div>
+                                                </div>
+                                            </div>
+                                            <div class="money_tran">
+                                                <div class="tran_numbers"> - 480</div>
+                                                <div class="tran_currency"> UAH</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                
+
+
+
+                            </div>
+                            <div class="date">
+                                <p>December 31</p>
+                                <div class="date_transactions">
+                                    <div class="tran">
+                                        <div class="tran_info">
+                                            <div class="tran_left">
+                                                <img src="./img/man.png" style="height:40px;width:40px; border-radius:25px; margin-right:0.5%">
+                                                <div class="transer">
+                                                    <div style="font-size:14px; font-weight:500; color:black; margin-bottom:0px"> Transfer from <a href="#">Alexey</a></a></div>
+                                                    <div style="font-size:12px;color:grey;"> Transactions To card: ** 3478</div>
+                                                </div>
+                                            </div>
+                                            <div class="money_tran">
+                                                <div class="tran_numbers"> - 480</div>
+                                                <div class="tran_currency"> UAH</div>
+                                            </div>
+                                        </div>
+                                        <div class="tran_info">
+                                            <div class="tran_left">
+                                                <img src="./img/man.png" style="height:40px;width:40px; border-radius:25px; margin-right:0.5%">
+                                                <div class="transer">
+                                                    <div style="font-size:14px; font-weight:500; color:black; margin-bottom:0px"> Transfer from <a href="#">Alexey</a></a></div>
+                                                    <div style="font-size:12px;color:grey;"> Transactions To card: ** 3478</div>
+                                                </div>
+                                            </div>
+                                            <div class="money_tran">
+                                                <div class="tran_numbers"> - 480</div>
+                                                <div class="tran_currency"> UAH</div>
+                                            </div>
+                                        </div>
+                                        <div class="tran_info">
+                                            <div class="tran_left">
+                                                <img src="./img/man.png" style="height:40px;width:40px; border-radius:25px; margin-right:0.5%">
+                                                <div class="transer">
+                                                    <div style="font-size:14px; font-weight:500; color:black; margin-bottom:0px"> Transfer from <a href="#">Alexey</a></a></div>
+                                                    <div style="font-size:12px;color:grey;"> Transactions To card: ** 3478</div>
+                                                </div>
+                                            </div>
+                                            <div class="money_tran">
+                                                <div class="tran_numbers" style="color:lime;"> 480 </div>
+                                                <div class="tran_currency"> UAH</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                
+
+
+
+                            </div>
+                            <div class="date">
+                                <p>December 31</p>
+                                <div class="date_transactions">
+                                    <div class="tran">
+                                        <div class="tran_info">
+                                            <div class="tran_left">
+                                                <img src="./img/man.png" style="height:40px;width:40px; border-radius:25px; margin-right:0.5%">
+                                                <div class="transer">
+                                                    <div style="font-size:14px; font-weight:500; color:black; margin-bottom:0px"> Transfer from <a href="#">Alexey</a></a></div>
+                                                    <div style="font-size:12px;color:grey;"> Transactions To card: ** 3478</div>
+                                                </div>
+                                            </div>
+                                            <div class="money_tran">
+                                                <div class="tran_numbers"> - 480</div>
+                                                <div class="tran_currency"> UAH</div>
+                                            </div>
+                                        </div>
+                                        <div class="tran_info">
+                                            <div class="tran_left">
+                                                <img src="./img/man.png" style="height:40px;width:40px; border-radius:25px; margin-right:0.5%">
+                                                <div class="transer">
+                                                    <div style="font-size:14px; font-weight:500; color:black; margin-bottom:0px"> Transfer from <a href="#">Alexey</a></a></div>
+                                                    <div style="font-size:12px;color:grey;"> Transactions To card: ** 3478</div>
+                                                </div>
+                                            </div>
+                                            <div class="money_tran">
+                                                <div class="tran_numbers"> - 480</div>
+                                                <div class="tran_currency"> UAH</div>
+                                            </div>
+                                        </div>
+                                        <div class="tran_info">
+                                            <div class="tran_left">
+                                                <img src="./img/man.png" style="height:40px;width:40px; border-radius:25px; margin-right:0.5%">
+                                                <div class="transer">
+                                                    <div style="font-size:14px; font-weight:500; color:black; margin-bottom:0px"> Transfer from <a href="#">Alexey</a></a></div>
+                                                    <div style="font-size:12px;color:grey;"> Transactions To card: ** 3478</div>
+                                                </div>
+                                            </div>
+                                            <div class="money_tran">
+                                                <div class="tran_numbers"> - 480</div>
+                                                <div class="tran_currency"> UAH</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                
+
+
+
+                            </div>
+                            <div class="date">
+                                <p>December 31</p>
+                                <div class="date_transactions">
+                                    <div class="tran">
+                                        <div class="tran_info">
+                                            <div class="tran_left">
+                                                <img src="./img/man.png" style="height:40px;width:40px; border-radius:25px; margin-right:0.5%">
+                                                <div class="transer">
+                                                    <div style="font-size:14px; font-weight:500; color:black; margin-bottom:0px"> Transfer from <a href="#">Alexey</a></a></div>
+                                                    <div style="font-size:12px;color:grey;"> Transactions To card: ** 3478</div>
+                                                </div>
+                                            </div>
+                                            <div class="money_tran">
+                                                <div class="tran_numbers"> - 480</div>
+                                                <div class="tran_currency"> UAH</div>
+                                            </div>
+                                        </div>
+                                        <div class="tran_info">
+                                            <div class="tran_left">
+                                                <img src="./img/man.png" style="height:40px;width:40px; border-radius:25px; margin-right:0.5%">
+                                                <div class="transer">
+                                                    <div style="font-size:14px; font-weight:500; color:black; margin-bottom:0px"> Transfer from <a href="#">Alexey</a></a></div>
+                                                    <div style="font-size:12px;color:grey;"> Transactions To card: ** 3478</div>
+                                                </div>
+                                            </div>
+                                            <div class="money_tran">
+                                                <div class="tran_numbers"> - 480</div>
+                                                <div class="tran_currency"> UAH</div>
+                                            </div>
+                                        </div>
+                                        <div class="tran_info">
+                                            <div class="tran_left">
+                                                <img src="./img/man.png" style="height:40px;width:40px; border-radius:25px; margin-right:0.5%">
+                                                <div class="transer">
+                                                    <div style="font-size:14px; font-weight:500; color:black; margin-bottom:0px"> Transfer from <a href="#">Alexey</a></a></div>
+                                                    <div style="font-size:12px;color:grey;"> Transactions To card: ** 3478</div>
+                                                </div>
+                                            </div>
+                                            <div class="money_tran">
+                                                <div class="tran_numbers"> - 480</div>
+                                                <div class="tran_currency"> UAH</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                
+
+
+
+                            </div>
+                            
+                        </div>
+                        
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/scripts.min.js"></script>
+    <script src="./js/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
 </body>
-
 </html>
-

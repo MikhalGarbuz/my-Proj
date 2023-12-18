@@ -1,141 +1,147 @@
-var gulp = require("gulp");
-var sass = require("gulp-sass")(require('sass'));;
-var cssnano = require("gulp-cssnano");
-var autoprefixer = require('gulp-autoprefixer');
-var concat = require("gulp-concat");
-var uglify = require("gulp-uglify");
-var rename = require("gulp-rename");
-var browserSync = require('browser-sync').create();
 
-gulp.task("html", function () {
-    return gulp.src("app/*.html")
-        .pipe(gulp.dest("dist"))
-        .pipe(browserSync.stream());
-});
+// Импорт пакетов
+const gulp = require('gulp')
+const less = require('gulp-less')
+const stylus = require('gulp-stylus')
+const sass = require('gulp-sass')(require('sass'))
+const rename = require('gulp-rename')
+const cleanCSS = require('gulp-clean-css')
+const ts = require('gulp-typescript')
+//const coffee = require('gulp-coffee')
+const babel = require('gulp-babel')
+const uglify = require('gulp-uglify')
+const concat = require('gulp-concat')
+const sourcemaps = require('gulp-sourcemaps')
+const autoprefixer = require('gulp-autoprefixer')
+const imagemin = require('gulp-imagemin')
+const htmlmin = require('gulp-htmlmin')
+const size = require('gulp-size')
+//const gulppug = require('gulp-pug')
+const newer = require('gulp-newer')
+const browsersync = require('browser-sync').create()
+const del = require('del')
 
-// gulp.task("css", function () {
-//     return gulp.src("app/css/*.css")
-//         .pipe(concat('styles.css'))
-//         .pipe(cssnano())
-//         .pipe(rename({ suffix: '.min' }))
-//         .pipe(gulp.dest("dist/css"))
-//         .pipe(browserSync.stream());
-// });
+// Пути исходных файлов src и пути к результирующим файлам dest
+const paths = {
+  html: {
+    src: ['src/*.html', 'src/*.pug', 'src/*.json'],
+    dest: 'public/'
+  },
+  styles: {
+    src: ['src/styles/**/*.sass', 'src/styles/**/*.scss', 'src/styles/**/*.styl', 'src/styles/**/*.less', 'src/styles/**/*.css'],
+    dest: 'public/styles/'
+  },
+  scripts: {
+    src: ['src/js/**/*.coffee', 'src/js/**/*.ts', 'src/js/**/*.js'],
+    dest: 'public/js/'
+  },
+  images: {
+    src: 'src/img/**',
+    dest: 'public/img/'
+  }
+}
 
-gulp.task("sass", function () {
-    return gulp.src("app/sass/*.scss")
-        .pipe(concat('styles.scss')) // combine multiple files into one
-        .pipe(sass())
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(cssnano()) // to run compressed css file
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest("dist/css"))
-        .pipe(browserSync.stream());
-});
+// Очистить каталог dist, удалить все кроме изображений
+function clean() {
+  return del(['public/*', '!public/img'])
+}
 
-gulp.task("scripts", function () {
-    return gulp.src("app/js/*.js")
-        .pipe(concat('scripts.js'))
-        .pipe(uglify())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest("dist/js"))
-        .pipe(browserSync.stream());
-});
+// Обработка html и pug
+function html() {
+  return gulp.src(paths.html.src)
+  //.pipe(gulppug())
+  .pipe(htmlmin({ collapseWhitespace: true }))
+  .pipe(size({
+    showFiles:true
+  }))
+  .pipe(gulp.dest(paths.html.dest))
+  .pipe(browsersync.stream())
+}
 
-gulp.task('images', function() {
-  return gulp.src("app/img/*.jpg")
-    .pipe(gulp.dest('dist/images'))
-    .pipe(browserSync.stream());
-})
+// Обработка препроцессоров стилей
+function styles() {
+  return gulp.src(paths.styles.src)
+  .pipe(sourcemaps.init())
+  //.pipe(less())
+  //.pipe(stylus())
+  .pipe(sass().on('error', sass.logError))
+  .pipe(autoprefixer({
+    cascade: false
+  }))
+  .pipe(cleanCSS({
+    level: 2
+  }))
+  .pipe(rename({
+    basename: 'style',
+    suffix: '.min'
+  }))
+  .pipe(sourcemaps.write('.'))
+  .pipe(size({
+    showFiles:true
+  }))
+  .pipe(gulp.dest(paths.styles.dest))
+  .pipe(browsersync.stream())
+}
 
-gulp.task("watch", function () {
-    browserSync.init({
-        server: {
-            baseDir: ["./app", "./dist"]
-        }
-    });
-    gulp.watch("app/*.html", gulp.series("html"));
-    gulp.watch("app/js/*.js", gulp.series("scripts"));
-    gulp.watch("app/sass/*.scss", gulp.series("sass"));
-    gulp.watch("app/img/*.{jpg,jpeg,png,gif}", gulp.series("images"))
-    gulp.watch("dist").on('change', browserSync.reload);
-});
+// Обработка Java Script, Type Script и Coffee Script
+function scripts() {
+  return gulp.src(paths.scripts.src)
+  .pipe(sourcemaps.init())
+  //.pipe(coffee({bare: true}))
+  /*
+  .pipe(ts({
+    noImplicitAny: true,
+    outFile: 'main.min.js'
+  }))
+  */
+  .pipe(babel({
+    presets: ['@babel/env']
+  }))
+  .pipe(uglify())
+  .pipe(concat('main.min.js'))
+  .pipe(sourcemaps.write('.'))
+  .pipe(size({
+    showFiles:true
+  }))
+  .pipe(gulp.dest(paths.scripts.dest))
+  .pipe(browsersync.stream())
+}
 
-gulp.task("default", gulp.series("html", "sass",'images', "scripts", "watch"));
+// Сжатие изображений
+function img() {
+  return gulp.src(paths.images.src)
+  .pipe(newer(paths.images.dest))
+  .pipe(imagemin({
+    progressive: true
+  }))
+  .pipe(size({
+    showFiles:true
+  }))
+  .pipe(gulp.dest(paths.images.dest))
+}
 
+// Отслеживание изменений в файлах и запуск лайв сервера
+function watch() {
+  browsersync.init({
+    server: {
+        baseDir: "./public"
+    }
+  })
+  gulp.watch(paths.html.dest).on('change', browsersync.reload)
+  gulp.watch(paths.html.src, html)
+  gulp.watch(paths.styles.src, styles)
+  gulp.watch(paths.scripts.src, scripts)
+  gulp.watch(paths.images.src, img)
+}
 
+// Таски для ручного запуска с помощью gulp clean, gulp html и т.д.
+exports.clean = clean
 
+exports.html = html
+exports.styles = styles
+exports.scripts = scripts
+exports.img = img
+exports.watch = watch
 
-
-// const { series, task, src, dest, watch } = require('gulp');  // Here, you're importing the series and task functions from the 'gulp' package. These functions are used to define and run Gulp tasks.
-// const fileinclude = require('gulp-file-include');
-// const browserSync = require('browser-sync').create();
-// // const gulp = require('gulp');
-
-// // // Define a Gulp 4 task called 'logMessage'
-// // task('logMessage', async function(cb) {
-// //   console.log('This is a Gulp 4 task that logs a message.');
-// //   cb();
-// // });
-
-// // Default task
-// // task('default', series('logMessage'));
-
-// const fileInludeSettings = {
-//   prefix: '@@',
-//   basepath: '@file'
-// };
-
-// task('includeFiles', function () {
-//   return src('./app/*.html')
-//     .pipe(fileinclude(fileInludeSettings))
-//     .pipe(dest('./dist/'))
-// })
-
-// task('css', function(){
-//   return src('./app/css/*.css')
-//   .pipe(dest('./dist/css/*.css')) 
-// })
-
-// task('img', function(){
-//   return src('./app/img/*.jpeg')
-//   .pipe(dest('./dist/img/*.jpeg')) 
-// })
-
-// task('html', function(){
-//   return src('./app/index.html/*.html')
-//   .pipe(dest('./dist/index.html/*.html')) 
-// })
-
-// task('js', function(){
-//   return src('./app/js/*.js')
-//   .pipe(dest('./dist/js/*.js')) 
-// })
-
-// task('sass', function(){
-//   return src('./app/sass/*.sass')
-//   .pipe(dest('./dist/sass/*.sass'))
-// })
-
-// // Task to serve the project and watch for changes
-// task('serve', function () {
-//   browserSync.init({
-//     server: {
-//       baseDir: './dist/' // Serve files from the 'dist' directory
-//     }
-//   });
-
-//   // Watch HTML files for changes and reload the browser
-//   watch('./app/*.html', series('includeFiles')).on('change', browserSync.reload);
-//   watch('./app/blocks/*.html', series('includeFiles')).on('change', browserSync.reload);
-//   // watch('./app/css/*.css', series('includeFiles')).on('change', browserSync.reload);
-
-//   // Add more watch tasks for other file types (e.g., CSS, JS) if needed
-// });
-
-// // Default task: Run 'logMessage', 'includeFiles', and 'serve' in series
-// task('default', series('includeFiles', 'serve'));
-
+// Таск, который выполняется по команде gulp
+exports.default = gulp.series(clean, html, gulp.parallel(styles, scripts, img), watch)

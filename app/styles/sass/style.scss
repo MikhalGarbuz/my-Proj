@@ -1,0 +1,326 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+#navbar{
+    background-color: #2c2c2c;
+    color: #858585; 
+    display: flex;
+    padding-left: 5px;
+    justify-content: space-between;
+    .navbar-nar a{
+        color: white;
+    }
+    #mono{
+        color: white;
+    }
+    #web{
+        color: #858585;
+    }
+    #navleft{
+
+        display: flex;
+        flex-wrap: nowrap;
+        width: 45%;
+        justify-content: space-between;
+        
+
+        
+        #ssnav{
+            display: flex;
+            flex-wrap: nowrap;
+            align-items:center;
+            justify-content: space-evenly;
+            text-align: center;
+            width: 300px;
+        }
+        .monoweb{
+            margin-left: 5px;
+        }
+        .column {
+            display: flex;
+            white-space: nowrap;
+            text-align:center;
+            align-items: center;
+            word-spacing: 3px;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+    #rsnav {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items:center;
+        justify-content: space-between;
+        width: 700px;
+        #mainmenu{
+            background-color: #363636;
+            display: flex;
+            flex-wrap: nowrap;
+            border-radius: 15px;
+            font-size: 14px;
+            align-items:center;
+            height: 30px;
+            a{
+                color: white;
+                text-decoration: none;
+            }
+        }
+        
+        
+        
+        #searchhello{
+            display: flex;
+            width: 150px;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            .hello{
+                    font-size: 14px;
+                    height: 30px;
+            }
+            .search{
+                width:69px;
+                height: 30px;
+                background-color: #363636;
+                border-radius:30px;
+                display: flex;
+                justify-content: space-between;       
+            }
+        }
+    }
+}
+#side{
+    height: auto;
+    width: 200px;
+    background-color: #373737;
+    display: flex;
+    flex-wrap: nowrap;
+    .bottom{
+        margin-top: 350%;
+    }
+    i{
+        text-decoration: none;
+    }
+    .sidemenu{
+        width: 200px;
+        height: 100px;
+        display:table;
+        justify-content: center;
+        color: #f6f6f6;
+        text-align: center;
+        margin-top: 20px;
+
+    }
+}
+#centermenu{
+    width: 100vw;
+    background-color: #f3f3f3;
+
+    
+}
+#mainpage{
+    display: flex;
+    width: 100%;
+    height: auto;
+    #divcards{
+        display:flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        
+        #cards{
+            margin: 2%;
+            color: white;
+            padding: 2%;
+            border-radius:25px;
+            min-width: 250px;
+            max-width: 310px;
+            //height: 180px;
+            background-color:#333333;
+            display: flex;
+            justify-content: start;
+            flex-wrap: wrap;
+            .firstsectioncards{
+                max-width: 250px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .moneysection{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 50%;
+                    h2{
+                        padding-top: 4px;
+                        font-size: 14px;
+                        color:#cccccc;
+                        padding-top: 5px;
+                    }
+                    p{
+                        font-size: 18px;
+                        color:white;
+                    }
+                }
+
+            }
+            .secondsectioncards{
+                width: 100%;
+                display: flex;
+                p{
+                    font-size: 18px;
+                    word-spacing: 15px;
+                }
+            }
+            .thirdsectioncards{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+    }
+    #maininfo{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+
+    }
+    #statistic{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        #statbott{
+            min-width: 300px;
+            min-height: 500px;
+            height: 600px;
+            background-color:white;
+            border-radius: 20px;
+            margin: 45px;
+            display: flex;
+            flex-wrap: wrap;
+            .doughnut-wrapper {
+                margin-left: auto;
+                margin-right: 0;
+        
+                width: 250px;
+                height: 250px;
+              }
+                    .categories{
+                    display: flex;
+                    flex-direction: column;
+                    width: 60%;
+                    .category{
+                        height: 50px;
+                        display: flex;
+                        flex-wrap: nowrap;
+                        justify-content: space-evenly;
+                        width: 70%;
+                    }
+                }
+            .left_top{
+                display: flex;
+                margin: 4%;
+                height: 50px;
+                width: 100%;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+
+                .date_settings{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 300px;
+                }
+            }
+
+        }
+        #stattop{
+            min-width: 300px;
+            min-height: 500px;
+            height: 600;
+            background-color:white;
+            border-radius: 20px;
+            margin: 45px;
+            display: flex;
+            flex-wrap: wrap;
+            .left_top{
+                display: flex;
+                margin: 4%;
+                height: 50px;
+                width: 100%;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                .date_settings{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 300px;
+                }
+            }
+            .balance{
+                width: 100%;
+                display: flex;
+                justify-content: end;
+            }
+            
+        }
+    }
+    
+
+        
+
+    #transactions{ 
+            min-width: 300px;
+            max-width: 750px;
+            height: 1090px;
+            background-color:white;
+            border-radius: 20px;
+            margin: 45px 0px 45px 45px;
+            .toptransactions{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                margin: 4%;
+                height: 50px;
+                align-items:center;
+                border-bottom: 0.5px solid #f2f2f2;
+                .transactions_settings{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 30%;
+
+                }
+            }
+            .date{
+                margin: 4%;
+                p{
+                    font-size: 14px;
+                    color: grey;
+                }
+                .tran_info{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 10px;
+                }
+                .tran_left{
+                    display: flex;
+                    width: 50%;
+                    height: 50px;
+                    
+                }
+                .money_tran{
+                    display: flex;
+                    flex-wrap: nowrap;
+                    align-items:center;
+                }
+                .tran_currency{
+                    color:grey;
+                    font-size: 14px;
+                }
+                .tran_numbers{
+                    color:black;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+            }
+    }
+}
